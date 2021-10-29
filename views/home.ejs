@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font-awsome-cdn s-->
+    <script src="https://kit.fontawesome.com/2d068f38d7.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/home_style.css">
+
+    <title><%= title %></title>
+</head>
+<body>
+    <div class = "container">
+        <h1 id = "header">TODO App</h1>
+    <form action="/post-data"  method="GET">
+        <div class = "description">
+            <p>DESCRIPTION</p>
+            <input type="text" name = "description" placeholder="What do you need to do?" required> 
+        </div>
+        <div class = "catagory-date">
+            <div class = "dropdown">
+                <p>CATEGORY</p>
+                <div>
+                    <input type="text" name="catagory" required placeholder="Choose a catagory...">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+
+                <div class = "dropdown-content">
+                    <ul>
+                        <li>
+                            Personal
+                        </li>
+                        <li>
+                            Work
+                        </li>
+                        <li>
+                            Collage
+                        </li>
+                        <li>
+                            xyz
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <p>DUE DATE</p>
+                <input type="date" name = "date" required>
+            </div>
+        </div>
+
+        <div>
+            <button type = "submit"><i class="fas fa-plus"> ADD TASK</i></button>
+            <a href=""></a>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

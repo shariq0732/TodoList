@@ -1,0 +1,16 @@
+{
+  "name": "todolistweb",
+  "version": "1.0.0",
+  "description": "An app where you can list down all your daily To do task",
+  "main": "index.js",
+  "scripts": {
+    "start": "supervisor index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shariq",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
