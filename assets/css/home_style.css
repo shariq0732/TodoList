@@ -2,11 +2,19 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: #808080;
+    font-family: sans-serif;
+    color: grey;
 }
 p{
     margin: 0px;
     padding: 0px;
 }
+input{
+    background-color: inherit;
+
+}
+
+
 .container{
     margin-top: 0px;
     width: 80%;
@@ -23,15 +31,14 @@ p{
     border-top: 1px solid lightgrey;
     padding: 10px 15px 15px 15px;
 }
+.description:hover{
+    background-color: #eaedf0;
+}
 .description>input{
     margin-top: 3px;
 }
 
-input{
-    outline: none;
-    border: 0px;
-    width: 100%;
-}
+
 
 .catagory-date{
     display: flex;
@@ -52,18 +59,34 @@ input{
     border-right: 1px solid lightgrey;
     position: relative;
 }
+.catagory-date>div:hover{
+    cursor: pointer;
+    background-color: #eaedf0;
+}
 .catagory-date>div:first-child>div{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.description>input , .catagory-date input{
+    outline: none;
+    border: 0px;
+    width: 100%;
+    color: grey;
 }
 .dropdown-content{
     position:absolute;
     background-color: white;
     width: 100%;
     margin-left: -15px;
-    /* display: none !important; */
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    display: none !important;
 
+}
+.show{
+    display: block !important;
 }
 .dropdown-content>ul{
     margin: 0px;
@@ -78,11 +101,76 @@ input{
 }
 .dropdown-content>ul>li:hover{
     background-color: lightblue;
+    cursor: pointer;
 }
 .catagory-date>div:nth-child(2n){
     padding-left: 15px;
 }
 
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+button[type = submit]{
+    border: 0px;
+    padding: 12px;
+    background-color: #444;
+    color: white;
+    font-family: sans-serif !important;
+    font-size: 1rem;
+}
+button[type = submit]:hover{
+    background-color: rgb(43, 42, 42);
+}
+
+.button>a{
+    text-decoration: none;
+    color: white;
+    background-color: #ee351e;
+    color: white;
+    padding: 11px;
+    font-family: sans-serif !important;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+.button>a:hover{
+    background-color: #b42f1e;
+}
+
+.row{
+    border-top: 1px solid lightgrey;
+    padding: 10px 0px;
+    margin: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row>div{
+    display: flex;
+    align-items: flex-start;
+}
+.row>div>div{
+    margin-left: 20px;
+}
+.row>div>div>div{
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: #94a6a6;
+}
+.row>div>div>div>i{
+    margin-right: 8px;
+}
+
+.row>div>button{
+    border: 0px;
+    padding: 8px;
+    background-color: tomato;
+    color: white;
+}
 
 
 
