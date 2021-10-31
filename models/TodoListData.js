@@ -1,8 +1,10 @@
+//require the library
 const mongoose = require("mongoose");
 
+//created the Schema
 const todoListDataSchema = new mongoose.Schema({
     
-    desc : {
+    description : {
         type: String,
         required: true
     },
@@ -17,5 +19,6 @@ const todoListDataSchema = new mongoose.Schema({
     }
 });
 
+//created model
 const todoListData = mongoose.model("todoListData" , todoListDataSchema);
 module.exports = todoListData;

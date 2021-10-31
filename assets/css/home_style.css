@@ -1,3 +1,6 @@
+
+/* tag based css for commong styling */
+
 body{
     margin: 0px;
     padding: 0px;
@@ -15,11 +18,14 @@ input{
 }
 
 
+/* input form css for taking input form user */
+
 .container{
     margin-top: 0px;
     width: 80%;
     margin: 0 auto;
     background-color: white;
+    padding-bottom: 30px;
 }
 #header{
     margin-top: 0px;
@@ -75,13 +81,18 @@ input{
     width: 100%;
     color: grey;
 }
+
+/* dropdown for the catagory selection */
+
 .dropdown-content{
     position:absolute;
     background-color: white;
     width: 100%;
     margin-left: -15px;
-    border: 1px solid lightgrey;
+    border: 1px solid grey;
     box-sizing: border-box;
+    margin-top: 16px;
+    box-shadow: 0px 0px 2px 2px lightgrey;
     display: none !important;
 
 }
@@ -107,14 +118,17 @@ input{
     padding-left: 15px;
 }
 
-.button{
+/* buttons of addition and deletion */
+
+.buttons{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px 0px;
 }
 
-button[type = submit]{
+
+#inputForm , #submitForm{
     border: 0px;
     padding: 12px;
     background-color: #444;
@@ -122,23 +136,20 @@ button[type = submit]{
     font-family: sans-serif !important;
     font-size: 1rem;
 }
-button[type = submit]:hover{
+#inputForm:hover{
     background-color: rgb(43, 42, 42);
 }
 
-.button>a{
-    text-decoration: none;
-    color: white;
+#submitForm{
     background-color: #ee351e;
-    color: white;
-    padding: 11px;
-    font-family: sans-serif !important;
     margin-left: 10px;
-    font-size: 1rem;
 }
-.button>a:hover{
+#submitForm:hover{
     background-color: #b42f1e;
 }
+
+
+/* Display content styling begins from here */
 
 .row{
     border-top: 1px solid lightgrey;
@@ -153,23 +164,54 @@ button[type = submit]:hover{
     display: flex;
     align-items: flex-start;
 }
-.row>div>div{
+.input-lables{
     margin-left: 20px;
 }
-.row>div>div>div{
+.icon-date-sub-description{
     margin-top: 4px;
     font-size: 0.85rem;
     color: #94a6a6;
 }
-.row>div>div>div>i{
+.icon-date-sub-description>i{
     margin-right: 8px;
 }
 
-.row>div>button{
+.show-catagory{
     border: 0px;
-    padding: 8px;
+    width: 80px;
+    height: 35px;
     background-color: tomato;
     color: white;
+}
+.delete-button{
+    outline: none;
+    color: white;
+    width: 35px;
+    height: 35px;
+    background-color: tomato;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+
+/*css class used in Jquery in order to write it easilly */
+
+.anchor-tag-enable{
+    pointer-events: auto !important;
+}
+
+
+.strike-through{
+    text-decoration: line-through;
+    color: lightgrey !important;
+}
+
+.icon-date-color{
+    color: #bac8c8 !important;
 }
 
 

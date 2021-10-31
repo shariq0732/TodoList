@@ -8,6 +8,12 @@
     <!-- font-awsome-cdn s-->
     <script src="https://kit.fontawesome.com/2d068f38d7.js" crossorigin="anonymous"></script>
 
+    <!-- animate.css file -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- css file -->
     <link rel="stylesheet" href="/css/home_style.css">
 
     <title><%= title %></title>
@@ -15,7 +21,10 @@
 <body>
     <div class = "container">
         <h1 id = "header">TODO App</h1>
-    <form action="/post-data"  method="GET">
+
+    <!-- form for taking input -->
+
+    <form action="/post_todo_list"  method="POST">
         <div class = "description">
             <p>DESCRIPTION</p>
             <input type="text" name = "description" placeholder="What do you need to do?" required> 
@@ -28,7 +37,7 @@
                     <i class="fas fa-caret-down"></i>
                 </div>
 
-                <div class = "dropdown-content">
+                <div class = "dropdown-content animate__animated animate__zoomIn">
                     <ul>
                         <li>
                             Personal
@@ -40,7 +49,10 @@
                             Collage
                         </li>
                         <li>
-                            xyz
+                            Cleaning
+                        </li>
+                        <li>
+                            Other
                         </li>
                     </ul>
                 </div>
@@ -51,32 +63,41 @@
             </div>
         </div>
 
-        <div class="button">
-            <button type = "submit"><i class="fas fa-plus"> &nbsp;ADD TASK</i></button>
-            <a href=""><i class="fas fa-trash-alt"></i> &nbsp;DELETE TASKS</a>
+        <!-- add and delete button -->
+
+        <div class="buttons">
+            <button type = "submit" id = "inputForm"><i class="fas fa-plus"> &nbsp;ADD TASK</i></button>
+            <button type = "submit" form = "myForm" id = "submitForm"><i class="fas fa-trash-alt"></i> &nbsp;DELETE TASKS</button>
         </div>
     </form>
 
 
+    <!-- form for showing all the todo list data like row -->
 
-    <% for(var i = 0; i < data.length; i++) { %>
-        <div class = "row">
-            <div>
-                <input type="checkbox">
+    <form action="/delete-todolist" method="GET" id = "myForm">
+        <% for(var i = 0; i < data.length; i++) { %>
+            <div class = "row">
                 <div>
-                    <p><%= data.description %></p>
-                    <div>
-                        <i class="fas fa-calendar-day"></i><%= data.date %>
-                    </div>
+                    <input type="checkbox" name = "id" value = "<%= data[i]._id%>" class = "<%= data[i]._id%>">
+                    <label for = "<%= data[i]._id%>" class = "input-lables">
+                        <p><%= data[i].description %></p>
+                        <div class = "icon-date-sub-description">
+                            <i class="fas fa-calendar-day"></i>
+                            <span>
+                                <%= data[i].date.toDateString().slice(3) %>
+                            </span>
+                        </div>
+                    </label>
+                </div>
+                <div>
+                    <button class = "show-catagory">
+                        <%= data[i].catagory %>
+                    </button>
+                    <a href="/delete-todolist/?id=<%= data[i]._id%>" class = "<%= data[i]._id %> delete-button" ><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
-            <div>
-                <button>
-                    <%= data.catagory %>
-                </button>
-            </div>
-        </div>
-    <% } %>
+        <% } %>
+    </form>
 
 
     </div>
@@ -86,3 +107,6 @@
     <script src="/js/home.js" type = "text/javascript"></script>
 </body>
 </html>
+
+
+
