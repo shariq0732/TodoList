@@ -1,5 +1,6 @@
 
 // dropdown interaction added
+
 $(".dropdown").click(function(){
     $(".dropdown-content").toggleClass("show");
 });
@@ -11,6 +12,7 @@ $(".dropdown-content li").click(function (evt) {
 
 
 //  different color for catagory for displaying the data 
+
   var color = ["rgb(43, 42, 42)" , "rgb(238, 53, 30)"];
   var colorB = ["rgb(104, 102, 102)" , "rgb(249, 126, 111)"];
   var index = 0;
@@ -26,6 +28,7 @@ $(".dropdown-content li").click(function (evt) {
   }
 
 //  jquery for displaying the data like catagory tag and strike through etc
+
   $(".row>div>input").change(function(){
     var label = $("label[for='" + $(this).attr('class') + "']");
     var classAtt = "."+$(this).attr('class');
@@ -44,6 +47,7 @@ $(".dropdown-content li").click(function (evt) {
 
 
 //  function to clear the checkbox checked on loading
+
   $('input[type="checkbox"]').each(function(){
   $(this).prop('checked', false);
 });
